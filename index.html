@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Меню на ужин</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+  <link rel="manifest" href="manifest.json">
+  <meta name="theme-color" content="#D95214">
+  <meta name="mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-title" content="Меню дня">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <link rel="apple-touch-icon" href="icon.svg">
+</head>
+<body>
+  <header>
+    <div class="header-inner">
+      <div class="header-icon">&#127859;</div>
+      <div>
+        <h1>Меню на ужин</h1>
+        <p id="today-date" class="header-date"></p>
+      </div>
+    </div>
+    <div class="header-nav-wrap">
+      <nav class="meal-nav">
+        <a href="breakfast.html">&#9728;&#65039; Завтрак</a>
+        <a href="lunch.html">&#129379; Обед</a>
+        <a href="index.html" class="active">&#127859; Ужин</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="section">
+      <div class="section-label section-label--today">Сегодня</div>
+      <div id="today-card" class="card card--today"></div>
+    </section>
+
+    <section class="section">
+      <div class="section-label section-label--tomorrow">Купить завтра</div>
+      <div id="tomorrow-card" class="card card--tomorrow"></div>
+    </section>
+
+    <section class="section">
+      <div class="section-label">Меню на 2 недели</div>
+      <div id="schedule-list" class="schedule"></div>
+    </section>
+
+    <section class="section">
+      <div class="section-label">Мои рецепты</div>
+      <div id="custom-section-content"></div>
+    </section>
+  </main>
+
+  <!-- Модальное окно добавления рецепта -->
+  <div id="modal-overlay" class="modal-overlay hidden">
+    <div class="modal">
+      <div class="modal-header">
+        <h3 id="modal-title">Новый рецепт</h3>
+        <button id="modal-close" class="modal-close">&#10005;</button>
+      </div>
+      <form id="recipe-form">
+        <div class="form-group">
+          <label>Название блюда *</label>
+          <input type="text" id="f-name" placeholder="Например: Котлеты с пюре" required>
+        </div>
+        <div class="form-group">
+          <label>Время приготовления</label>
+          <input type="text" id="f-time" placeholder="45 мин">
+        </div>
+        <div class="form-group">
+          <label>Ингредиенты (каждый с новой строки)</label>
+          <textarea id="f-ingredients" rows="4" placeholder="куриное филе 500г&#10;картошка 700г&#10;масло растительное"></textarea>
+        </div>
+        <div class="form-group">
+          <label>Шаги приготовления (каждый с новой строки)</label>
+          <textarea id="f-steps" rows="4" placeholder="Обжарить лук...&#10;Добавить мясо...&#10;Тушить 20 мин..."></textarea>
+        </div>
+        <div class="form-group">
+          <label>Название салата</label>
+          <input type="text" id="f-salad-name" placeholder="Салат из помидоров и огурцов">
+        </div>
+        <div class="form-group">
+          <label>Ингредиенты для салата (каждый с новой строки)</label>
+          <textarea id="f-salad-ingredients" rows="3" placeholder="помидоры 2 шт&#10;огурцы 2 шт&#10;масло растительное"></textarea>
+        </div>
+        <input type="hidden" id="f-edit-idx" value="-1">
+        <div class="form-actions">
+          <button type="button" id="modal-cancel" class="btn-cancel">Отмена</button>
+          <button type="submit" class="btn-save">Сохранить</button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <script src="app.js"></script>
+  <script>
+    if ('serviceWorker' in navigator) {
+      window.addEventListener('load', () => {
+        navigator.serviceWorker.register('sw.js').catch(() => {});
+      });
+    }
+  </script>
+</body>
+</html>

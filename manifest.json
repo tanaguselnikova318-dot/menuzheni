@@ -1,0 +1,20 @@
+{
+  "name": "Меню дня",
+  "short_name": "Меню",
+  "description": "Завтрак, обед и ужин — рецепты на каждый день",
+  "start_url": "./index.html",
+  "scope": "./",
+  "display": "standalone",
+  "orientation": "portrait",
+  "background_color": "#FAF6F0",
+  "theme_color": "#D95214",
+  "lang": "ru",
+  "icons": [
+    {
+      "src": "icon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "any maskable"
+    }
+  ]
+}

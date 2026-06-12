@@ -1,0 +1,26 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="512" y2="512" gradientUnits="userSpaceOnUse">
+      <stop offset="0%" stop-color="#9E3008"/>
+      <stop offset="50%" stop-color="#D95214"/>
+      <stop offset="100%" stop-color="#F49B38"/>
+    </linearGradient>
+  </defs>
+  <!-- Full-bleed background (works as maskable) -->
+  <rect width="512" height="512" fill="url(#bg)"/>
+  <!-- Bowl body -->
+  <path d="M104 278 Q110 376 256 385 Q402 376 408 278 Z" fill="white" opacity="0.93"/>
+  <!-- Bowl rim -->
+  <ellipse cx="256" cy="278" rx="152" ry="22" fill="white"/>
+  <!-- Food tint inside bowl -->
+  <ellipse cx="256" cy="273" rx="118" ry="14" fill="#FDEBD4" opacity="0.7"/>
+  <!-- Steam left -->
+  <path d="M186 258 Q174 235 186 212 Q198 189 186 166"
+        stroke="rgba(255,255,255,0.78)" stroke-width="13" stroke-linecap="round" fill="none"/>
+  <!-- Steam center -->
+  <path d="M256 252 Q244 229 256 206 Q268 183 256 160"
+        stroke="rgba(255,255,255,0.78)" stroke-width="13" stroke-linecap="round" fill="none"/>
+  <!-- Steam right -->
+  <path d="M326 258 Q314 235 326 212 Q338 189 326 166"
+        stroke="rgba(255,255,255,0.78)" stroke-width="13" stroke-linecap="round" fill="none"/>
+</svg>
